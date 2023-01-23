@@ -26,12 +26,14 @@ header {
     padding-top: 50px;
     
     
+    
 }
 
 .list-group-item {
     background-color: blue;
     color: white;
     font-weight: bold;
+    
 }
 
 .card-header {
@@ -39,3 +41,4 @@ header {
     color: white;
     font-weight: bold;
 }
+

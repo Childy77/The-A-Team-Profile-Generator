@@ -1,24 +1,26 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const generateHtml = ({ name, id, email, office, github, school }) =>
+
 
 const questions = [
 
     // employee info
     {
-    type: "input",
-    name: "name",
-    message: "What is you employees name?"
+        type: "input",
+        name: "name",
+        message: "What is your employee name?"
     },
     {
-    type: "input",
-    name: "id",
-    message: "What is your employees ID number?"
+        type: "input",
+        name: "id",
+        message: "What is your employee ID number?"
     },
     {
-    type: "input",
-    name: "name",
-    message: "What is your employees email?"
+        type: "input",
+        name: "email",
+        message: "What is your employee email?"
     },
 
     // manager info
@@ -39,21 +41,54 @@ const questions = [
     },
     {
         type: "input",
-        name: "officeNumber",
+        name: "office",
         message: "What is your managers office number?"
-    },
-    {
-        type: "input",
-        name: "github",
-        message: "What is your github username?"
-    },
-    {
-        type: "input",
-        name: "school",
-        message: "What school did your manager go to"
     },
 
     // Engineer info
 
+    {
+        type: "input",
+        name: "name",
+        message: "What is the Engineers name?"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your Engeneers ID number?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your Engineers email?"
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the Engineers github username?"
+    },
+
     // Intern info
+
+    {
+        type: "input",
+        name: "name",
+        message: "What is your Interns name?"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your Interns ID number?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your Interns email?"
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What school did your Intern go to?"
+    },
+
 ]
