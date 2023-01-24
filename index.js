@@ -2,8 +2,16 @@ const inquirer = require("inquirer");
 
 const fs = require("fs");
 const path = require('path');
+const Manager = require("./lib/manager");
+const Intern = require("./lib/intern");
+const Engineer = require("./lib/engineer");
+
+
+const employees = [];
 
 // const generateHtml = ({ name, id, email, office, github, school }) =>
+
+function init() {
 
 
 inquirer
@@ -31,78 +39,92 @@ inquirer
         name: "office",
         message: "What is your managers office number?"
     },
-    // employee info
-    {
-        type: "input",
-        name: "name",
-        message: "What is your employee name?"
-    },
-    {
-        type: "list",
-        name: "role",
-        message: "What is the role of your employee?",
-        choices: ["intern", "engineer"]
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "What is your employee ID number?"
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is your employee email?"
-    },
+   
 
-    
-
-    // Engineer info
-
-    {
-        type: "input",
-        name: "name",
-        message: "What is the Engineers name?"
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "What is your Engeneers ID number?"
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is your Engineers email?"
-    },
-    {
-        type: "input",
-        name: "github",
-        message: "What is the Engineers github username?"
-    },
-
-    // Intern info
-
-    {
-        type: "input",
-        name: "name",
-        message: "What is your Interns name?"
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "What is your Interns ID number?"
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is your Interns email?"
-    },
-    {
-        type: "input",
-        name: "school",
-        message: "What school did your Intern go to?"
-    },
-
-]);
+])
+.then((answers) => {
+    // run answers through manager constructor and move it to global array
+    const emp = new Manager(answers.name, answers.id, answers.email, answers.office);
+    employees.push(emp);
+    question();
+})
 
 
+}
+
+function menu() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "choice",
+            message: "Do you want to create a new employee?",
+            choices: ["yes", "no"]
+
+        }
+    ]) 
+    .then((answer) => {
+        if (answer.choice === "yes") {
+            //run function to ask question
+            question()
+            
+        }
+        else {
+            //run function to create html
+            console.log(employees);
+        }
+    })
+}
+
+function question() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "role",
+            message: "What is the role of your employee?",
+            choices: ["intern", "engineer"]
+        },
+
+        {
+            type: "input",
+            name: "name",
+            message: "What is your employees name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your employees ID number?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your employees email?"
+        },
+
+        {
+            type: "input",
+            name: "school",
+            message: "What school did your Intern go to?",
+            when:(answers) => answers.role === "intern"
+        },
+
+        {
+            type: "input",
+            name: "github",
+            message: "What is the Engineers github username?",
+            when:(answers) => answers.role === "engineer"
+        },
+    ])
+    .then((answers) => {
+        if (answers.role === "intern") {
+            // run answers through intern constructor
+        }
+        else {
+            // run answers through engineer constructor
+
+        }
+        // move created employee to global array
+        menu();
+    })
+}
+init();
 
