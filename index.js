@@ -9,22 +9,6 @@ const path = require('path');
 inquirer
 .prompt([
 
-    // employee info
-    {
-        type: "input",
-        name: "name",
-        message: "What is your employee name?"
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "What is your employee ID number?"
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is your employee email?"
-    },
 
     // manager info
     {
@@ -47,6 +31,30 @@ inquirer
         name: "office",
         message: "What is your managers office number?"
     },
+    // employee info
+    {
+        type: "input",
+        name: "name",
+        message: "What is your employee name?"
+    },
+    {
+        type: "list",
+        name: "role",
+        message: "What is the role of your employee?",
+        choices: ["intern", "engineer"]
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your employee ID number?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your employee email?"
+    },
+
+    
 
     // Engineer info
 
