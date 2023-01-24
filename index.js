@@ -117,9 +117,15 @@ function question() {
     .then((answers) => {
         if (answers.role === "intern") {
             // run answers through intern constructor
+            const int = new Intern(answers.name, answers.id, answers.email, answers.school);
+            employees.push(int);
+            
         }
         else {
             // run answers through engineer constructor
+            const eng = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            employees.push(eng);
+            
 
         }
         // move created employee to global array
