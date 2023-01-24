@@ -5,6 +5,7 @@ const path = require('path');
 const Manager = require("./lib/manager");
 const Intern = require("./lib/intern");
 const Engineer = require("./lib/engineer");
+const genHtml = require("./src/genHTML");
 
 
 const employees = [];
@@ -70,7 +71,9 @@ function menu() {
         }
         else {
             //run function to create html
-            console.log(employees);
+
+            const html = genHtml(employees)
+            fs.promises.writeFile("dist/index.html", html)
         }
     })
 }
