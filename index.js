@@ -1,10 +1,13 @@
 const inquirer = require("inquirer");
+
 const fs = require("fs");
+const path = require('path');
 
-const generateHtml = ({ name, id, email, office, github, school }) =>
+// const generateHtml = ({ name, id, email, office, github, school }) =>
 
 
-const questions = [
+inquirer
+.prompt([
 
     // employee info
     {
@@ -91,4 +94,7 @@ const questions = [
         message: "What school did your Intern go to?"
     },
 
-]
+]);
+
+
+

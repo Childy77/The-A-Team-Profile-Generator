@@ -30,7 +30,7 @@ header {
 }
 
 .list-group-item {
-    background-color: blue;
+    background-color: rgb(27, 56, 66);
     color: white;
     font-weight: bold;
     
@@ -41,4 +41,6 @@ header {
     color: white;
     font-weight: bold;
 }
+
+
 
