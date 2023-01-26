@@ -5,12 +5,12 @@ for (let i = 0; i < data.length; i++) {
     
     const html = `<div class="card" style="width: 18rem;">
     <div class="card-header">
-      Intern:${emp.name}
+      Intern: ${emp.name}
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID:${emp.id}</li>
-      <li id="contact" class="list-group-item"><a href="mailto:ryanbairdchilders@gmail.com">Email:${emp.email}</a></li>
-      <li class="list-group-item">School:${emp.school}</li>
+      <li class="list-group-item">ID: ${emp.id}</li>
+      <li id="contact" class="list-group-item"><a href="mailto:ryanbairdchilders@gmail.com">Email: ${emp.email}</a></li>
+      <li class="list-group-item">School: ${emp.school}</li>
     </ul>
   </div>`
   allHtml.push(html)
@@ -24,12 +24,12 @@ for (let i = 0; i < data.length; i++) {
     
     const html = `<div class="card" style="width: 18rem;">
     <div class="card-header">
-      Engineer:${emp.name}
+      Engineer: ${emp.name}
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID:${emp.id}</li>
-      <li id="contact" class="list-group-item"><a href="mailto:ryanbairdchilders@gmail.com">Email:${emp.email}</a></li>
-      <li class="list-group-item">Github Username:${emp.github}</li>
+      <li class="list-group-item">ID: ${emp.id}</li>
+      <li id="contact" class="list-group-item"><a href="mailto:ryanbairdchilders@gmail.com">Email: ${emp.email}</a></li>
+      <li class="list-group-item"><a href="https://github.com/Childy77/The-A-Team-Profile-Generator" target="_blank">Github Username: ${emp.github}</li>
     </ul>
   </div>`
   allHtml.push(html)
@@ -66,12 +66,12 @@ return `<!DOCTYPE html>
   <main class="team-cards">
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        Manager:${team[0].name}
+        Manager: ${team[0].name}
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${team[0].id}</li>
-        <li id="contact" class="list-group-item"><a href="mailto:ryanbairdchilders@gmail.com">${team[0].email}</a></li>
-        <li class="list-group-item">Office:${team[0].office}</li>
+        <li class="list-group-item">ID: ${team[0].id}</li>
+        <li id="contact" class="list-group-item"><a href="mailto:ryanbairdchilders@gmail.com">Email: ${team[0].email}</a></li>
+        <li class="list-group-item">Office: ${team[0].office}</li>
       </ul>
     </div>
     ${genIntern(team.filter(member => member.getRole() === "intern"))}
