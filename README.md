@@ -37,7 +37,7 @@
   
   ## Tests
   
-  I ran out of time and wad unable to put the neccesary test in place.  I intend to go back after and fix this.
+  I ran out of time and was unable to put the neccesary tests in place.  I intend to go back after and fix this.
 
   ##questions
 
